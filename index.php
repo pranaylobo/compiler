@@ -134,7 +134,11 @@
 date_default_timezone_set("Asia/Dhaka");
  $t=date("H:i:s");
 echo"<b>Server Time:  $t</b>";
-
+if( $_POST["email"] ) {
+     
+      echo "Welcome ". $_POST['email']. "<br />";
+      
+   }
 ?>
 </div>
 </div>
