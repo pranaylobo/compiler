@@ -1,8 +1,8 @@
 <?php
 	$CC="gcc";
 	$out="timeout 5s ./a.out";
-	$code=$_POST["code"];
-	$input=$_POST["input"];
+	@$code=$_GET["code"];
+	@$input=$_GET["input"];
 	$filename_code="main.c";
 	$filename_in="input.txt";
 	$filename_error="error.txt";
