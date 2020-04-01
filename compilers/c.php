@@ -49,10 +49,10 @@ header('Access-Control-Allow-Origin: *');
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
 		}
-		echo "<pre>$output</pre>";
-// 		@$myObj->name = $output;
-// 		$myJSON = json_encode($myObj);
-// 		echo $myJSON;	
+// 		echo "<pre>$output</pre>";
+		@$myObj->name = $output;
+		$myJSON = json_encode($myObj);
+		echo $myJSON;	
 	
 	
 	}
