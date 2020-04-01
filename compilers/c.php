@@ -1,4 +1,6 @@
 <?php
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
 header('Access-Control-Allow-Origin: *');  
         
     
