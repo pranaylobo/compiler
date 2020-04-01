@@ -52,7 +52,10 @@ header('Access-Control-Allow-Origin: *');
 		echo "<pre>$output</pre>";
 // 		@$myObj->name = $output;
 // 		$myJSON = json_encode($myObj);
-// 		echo $myJSON;	}
+// 		echo $myJSON;	
+	
+	
+	}
 	else if(!strpos($error,"error"))
 	{
 		// echo "<pre>$error</pre>";
