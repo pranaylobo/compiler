@@ -5,14 +5,15 @@ header('Access-Control-Allow-Origin: *');
         $postdata = file_get_contents("php://input");
         $request = json_decode($postdata);
         @$email = $request->email;
-		// echo $email;
+	@$email1 = $request->input;
 
 		$decode =urldecode($email);
+		$decode1 =urldecode($email1);
 		
 		$CC="gcc";
 	$out="timeout 5s ./a.out";
 	$code=$decode;
-	$input="";
+	$input=$decode1;
 	$filename_code="main.c";
 	$filename_in="input.txt";
 	$filename_error="error.txt";
