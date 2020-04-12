@@ -8,7 +8,7 @@ header('Access-Control-Allow-Origin: *');
         @$email = $request->email;
 	@$email1 = $request->input;
 
-		$decode utf8_decode(urldecode($email));
+		$decode=utf8_decode(urldecode($email));
 		$decode1 =utf8_decode(urldecode($email1));
 		
 		$CC="gcc";
