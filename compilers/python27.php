@@ -1,4 +1,13 @@
 <?php
+
+header('Access-Control-Allow-Origin: *');  
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+@$email = $request->email; 
+@$email1 = $request->input;
+
+$decode=rawurldecode($email);
+$decode1 =rawurldecode($email1);
 	$CC="python2.7";
 	//$out="./a.out";
 	$code=$_POST["code"];
