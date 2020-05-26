@@ -7,8 +7,8 @@ $request = json_decode($postdata);
 @$email = $request->email;
 @$email1 = $request->input;
 
-$decode=utf8_encode(urldecode($email));
-$decode1 =utf8_encode(urldecode($email1));
+$decode=rawurldecode($email));
+$decode1 =rawurldecode($email1));
 
 $CC="gcc";
 $out="timeout 5s ./a.out";
