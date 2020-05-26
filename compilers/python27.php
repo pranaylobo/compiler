@@ -10,9 +10,10 @@ $decode=rawurldecode($email);
 $decode1 =rawurldecode($email1);
 	$CC="python2.7";
 	//$out="./a.out";
-	$code=$decode;
-$input=111;
-	$filename_code="main.py";
+$code=$decode;
+$input=$decode1;
+
+$filename_code="main.py";
 	$filename_in="input.txt";
 	$filename_error="error.txt";
 	//$executable="a.out";
