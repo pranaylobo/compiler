@@ -25,7 +25,7 @@
 	exec("chmod 777 $filename_error");	
 	shell_exec($command_error);
 	exec("chmod -R 777 $executable");
-
+echo"hello"
 	$error=file_get_contents($filename_error);
 	if(trim($error)=="")
 	{
