@@ -78,7 +78,7 @@ echo $myJSON;
 	}
 	else
 	{
-		echo "<pre>$error</pre>";
+		// echo "<pre>$error</pre>";
 		$check=1;
 	}
 	$executionEndTime = microtime(true);
@@ -101,7 +101,7 @@ echo $myJSON;
 	}
 	else if($check==0)
 	{
-		echo "<pre>Verdict : AC</pre>";
+		// echo "<pre>Verdict : AC</pre>";
 	}
 
     exec("rm $filename_code");
