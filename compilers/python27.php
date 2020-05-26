@@ -1,6 +1,6 @@
 <?php
 
-header('Access-Control-Allow-Origin: http://localhost:4200');  
+header('Access-Control-Allow-Origin: *');  
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 @$email = $request->email; 
@@ -47,7 +47,7 @@ $decode1 =rawurldecode($email1);
 			$command=$command." < ".$filename_in;
 			$output=shell_exec($command);
 		}
-		// echo "<pre>$output</pre>";
+		echo "<pre>$output</pre>";
 
 		@$myObj->name = $output;
 $myJSON = json_encode($myObj);
@@ -55,7 +55,7 @@ echo $myJSON;
 	}
 	else
 	{
-		// echo "<pre>$error</pre>";
+		echo "<pre>$error</pre>";
 
 		@$myObj->name = $error; 
 $myJSON = json_encode($myObj);
