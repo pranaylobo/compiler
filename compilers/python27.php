@@ -10,7 +10,7 @@ $decode=rawurldecode($email);
 $decode1 =rawurldecode($email1);
 
 
-	$CC="python2.7";
+	$CC="python2.7.5";
 	//$out="./a.out";
 	$code=$decode;
 	$input=$decode1;
