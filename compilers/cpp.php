@@ -79,6 +79,9 @@ echo $myJSON;
 	else
 	{
 		// echo "<pre>$error</pre>";
+		@$myObj->name = $error; 
+$myJSON = json_encode($myObj);
+echo $myJSON;		
 		$check=1;
 	}
 	$executionEndTime = microtime(true);
