@@ -7,7 +7,7 @@
 	$filename_in="input.txt";
 	$filename_error="error.txt";
 	//$executable="a.out";
-	$command=$CC."  ".$filename_code;	
+	$command=$CC." -lm  ".$filename_code;	
 	$command_error=$command." 2>".$filename_error;
 
 	//if(trim($code)=="")
