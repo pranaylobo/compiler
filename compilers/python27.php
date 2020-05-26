@@ -27,19 +27,16 @@
 
 	if(trim($error)=="")
 	{
-		iif(trim($input)=="")
+		if(trim($input)=="")
 		{
-			$output=shell_exec($out);
+			$output=shell_exec($command);
 		}
 		else
 		{
-			$out=$out." < ".$filename_in;
-			$output=shell_exec($out);
-			
-			
+			$command=$command." < ".$filename_in;
+			$output=shell_exec($command);
 		}
-
-		echo "<pre>xxzxxz$output</pre>";
+		echo "<pre>$output</pre>";
 	}
 	else
 	{
