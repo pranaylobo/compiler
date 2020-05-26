@@ -1,19 +1,8 @@
 <?php
-
-header('Access-Control-Allow-Origin: *');  
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
-@$email = $request->email; 
-@$email1 = $request->input;
-
-$decode=rawurldecode($email);
-$decode1 =rawurldecode($email1);
-
-
-	$CC="python2.7.5";
+	$CC="python2.7";
 	//$out="./a.out";
-	$code=$decode;
-	$input=$decode1;
+	$code=$_POST["code"];
+	$input=$_POST["input"];
 	$filename_code="main.py";
 	$filename_in="input.txt";
 	$filename_error="error.txt";
@@ -48,18 +37,10 @@ $decode1 =rawurldecode($email1);
 			$output=shell_exec($command);
 		}
 		echo "<pre>$output</pre>";
-
-		@$myObj->name = $output;
-$myJSON = json_encode($myObj);
-echo $myJSON;	
 	}
 	else
 	{
 		echo "<pre>$error</pre>";
-
-		@$myObj->name = $error; 
-$myJSON = json_encode($myObj);
-echo $myJSON;	
 	}
 	exec("rm $filename_code");
 	exec("rm *.txt");
