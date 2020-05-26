@@ -1,8 +1,19 @@
 <?php
+
+header('Access-Control-Allow-Origin: *');  
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+@$email = $request->email; 
+@$email1 = $request->input;
+
+
+$decode=utf8_encode(urldecode($email));
+$decode1 =utf8_encode(urldecode($email1));
+
 	$CC="g++";
 	$out="timeout 5s ./a.out";
-	$code=$_POST["code"];
-	$input=$_POST["input"];
+	$code=$decode;
+$input=$decode1;
 	$filename_code="main.cpp";
 	$filename_in="input.txt";
 	$filename_error="error.txt";
@@ -43,7 +54,10 @@
 			
 		}
 		//echo "<pre>$output</pre>";
-              echo "<textarea id='div' class=\"form-control\" name=\"output\" rows=\"10\" cols=\"50\">$output</textarea><br><br>";
+			//   echo "<textarea id='div' class=\"form-control\" name=\"output\" rows=\"10\" cols=\"50\">$output</textarea><br><br>";
+			@$myObj->name = $output;
+$myJSON = json_encode($myObj);
+echo $myJSON;	
 	}
 	else if(!strpos($error,"error"))
 	{
@@ -57,7 +71,10 @@
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
 		}
-		                echo "<textarea id='div' class=\"form-control\" name=\"output\" rows=\"10\" cols=\"50\">$output</textarea><br><br>";
+						// echo "<textarea id='div' class=\"form-control\" name=\"output\" rows=\"10\" cols=\"50\">$output</textarea><br><br>";
+						@$myObj->name = $output;
+$myJSON = json_encode($myObj);
+echo $myJSON;	
 	}
 	else
 	{
@@ -67,20 +84,20 @@
 	$executionEndTime = microtime(true);
 	$seconds = $executionEndTime - $executionStartTime;
 	$seconds = sprintf('%0.2f', $seconds);
-	echo "<pre>Compiled And Executed In: $seconds s</pre>";
+	// echo "<pre>Compiled And Executed In: $seconds s</pre>";
 
 
 	if($check==1)
 	{
-		echo "<pre>Verdict : CE</pre>";
+		// echo "<pre>Verdict : CE</pre>";
 	}
 	else if($check==0 && $seconds>3)
 	{
-		echo "<pre>Verdict : TLE</pre>";
+		// echo "<pre>Verdict : TLE</pre>";
 	}
 	else if(trim($output)=="")
 	{
-		echo "<pre>Verdict : WA</pre>";
+		// echo "<pre>Verdict : WA</pre>";
 	}
 	else if($check==0)
 	{
