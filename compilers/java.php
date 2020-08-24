@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
+
 	$CC="javac";
 	$out="timeout 6s java Main";
 	$code=$_POST["code"];
