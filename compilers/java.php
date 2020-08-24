@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
+header('Access-Control-Allow-Origin: *');  
 	$CC="javac";
 	$out="timeout 6s java Main";
 	$code=$_POST["code"];
